@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>모르가르드 연대기 — 이름 없는 영웅들의 시대</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=Nanum+Myeongjo:wght@400;700;800&display=swap');
+:root{--ink:#241e17;--paper:#e8dcc0;--paper2:#d7c49d;--gold:#c4a56b;--muted:#a89a7c;--night:#101116;--night2:#191a20;--line:rgba(196,165,107,.28)}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--night);color:#e9e0ce;font-family:'Gowun Batang',serif}
+button{font:inherit;cursor:pointer}
+a{color:inherit;text-decoration:none}
+.topbar{position:fixed;z-index:20;top:0;left:0;right:0;display:flex;align-items:center;justify-content:space-between;padding:18px 5vw;background:linear-gradient(#101116f2,#101116c9);border-bottom:1px solid var(--line);backdrop-filter:blur(12px)}
+.brand{font-family:'Nanum Myeongjo',serif;letter-spacing:.16em;font-size:13px;color:var(--gold)}
+.nav{display:flex;gap:24px;font-size:12px;color:#c9bea9}
+.nav a:hover{color:#fff}
+.menu{display:none;background:none;color:var(--gold);border:1px solid var(--line);padding:7px 10px}
+.hero{min-height:100vh;position:relative;display:grid;place-items:center;text-align:center;padding:130px 22px 70px;overflow:hidden;background:radial-gradient(ellipse at 50% 55%,#39404b55,transparent 48%),linear-gradient(180deg,#11141c 0%,#181a20 65%,#101116 100%)}
+.hero:before{content:"";position:absolute;inset:0;background:linear-gradient(0deg,#101116 0%,transparent 40%,#10111655),url('https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=1800&q=85') center/cover;opacity:.26;filter:grayscale(.5)}
+.hero:after{content:"";position:absolute;width:min(76vw,780px);height:min(76vw,780px);border:1px solid #c4a56b27;border-radius:50%;box-shadow:0 0 0 35px #c4a56b08,0 0 0 80px #c4a56b05}
+.hero-inner{position:relative;z-index:1;max-width:850px}
+.eyebrow{font-size:11px;letter-spacing:.38em;color:var(--gold);margin-bottom:25px}
+.hero h1{font-family:'Nanum Myeongjo',serif;font-size:clamp(44px,8vw,92px);font-weight:400;letter-spacing:.13em;margin:0 0 18px;text-shadow:0 5px 30px #000}
+.hero .subtitle{font-size:clamp(14px,2vw,19px);letter-spacing:.1em;color:#d8c9a7;margin-bottom:26px}
+.hero p{max-width:590px;margin:0 auto;color:#b9b5ad;line-height:2;font-size:14px}
+.cta{margin-top:38px;display:inline-flex;align-items:center;gap:14px;border:1px solid #c4a56b8a;padding:14px 25px;color:#e6d4aa;letter-spacing:.12em;font-size:12px;background:#15161bb8;transition:.25s}
+.cta:hover{background:#c4a56b;color:#171510;transform:translateY(-2px)}
+.scrollhint{position:absolute;bottom:25px;left:50%;transform:translateX(-50%);font-size:10px;letter-spacing:.25em;color:#92866f}
+.intro{max-width:1000px;margin:auto;padding:90px 24px 75px;text-align:center}
+.kicker{font-size:10px;letter-spacing:.3em;color:var(--gold);text-transform:uppercase}
+.intro h2{font-family:'Nanum Myeongjo',serif;font-weight:400;font-size:clamp(25px,4vw,42px);line-height:1.5;margin:18px 0}
+.intro p{max-width:680px;margin:0 auto;color:#bdb5a7;line-height:2.15;font-size:14px}
+.rule{height:1px;max-width:180px;margin:35px auto;background:linear-gradient(90deg,transparent,var(--gold),transparent)}
+.reader{padding:40px 5vw 100px;background:linear-gradient(#101116,#17161a 50%,#101116)}
+.reader-head{text-align:center;margin-bottom:32px}
+.reader-head h2{font-family:'Nanum Myeongjo',serif;font-size:30px;font-weight:400;margin:12px 0;color:#e9ddc4}
+.reader-head p{font-size:12px;color:#9e9584}
+.book-wrap{max-width:1120px;margin:auto;perspective:1800px}
+.book{display:grid;grid-template-columns:1fr 1fr;min-height:620px;filter:drop-shadow(0 25px 30px #0008)}
+.page{position:relative;padding:clamp(28px,5vw,66px);color:var(--ink);background:linear-gradient(100deg,#d7c49d,#eee3c8 18%,#e9ddc0 82%,#c9b58e);font-family:'Nanum Myeongjo',serif;line-height:2;overflow:hidden}
+.page.left{border-right:1px solid #88734f;box-shadow:inset -12px 0 18px #59482a20}
+.page.right{background:linear-gradient(260deg,#d7c49d,#eee3c8 18%,#e9ddc0 82%,#c9b58e);box-shadow:inset 12px 0 18px #59482a20}
+.page:before{content:"";position:absolute;inset:0;pointer-events:none;opacity:.2;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.18'/%3E%3C/svg%3E")}
+.page-content{position:relative;z-index:1}
+.page .chapter{font-size:10px;letter-spacing:.25em;color:#77613d;margin-bottom:18px}
+.page h3{font-size:clamp(21px,3vw,30px);font-weight:700;line-height:1.5;margin:0 0 20px;color:#30261a}
+.page p{font-size:13px;margin:0 0 15px;text-align:justify}
+.page .ornament{text-align:center;color:#92774b;font-size:19px;margin:22px 0}
+.toc{list-style:none;padding:0;margin:25px 0}
+.toc li{border-bottom:1px dotted #9a835d;padding:10px 0;display:flex;gap:12px;font-size:12px}
+.toc button{border:0;background:none;color:var(--ink);text-align:left;padding:0;flex:1}
+.toc button:hover{color:#8a5f24}
+.toc span{color:#8c7045}
+.page-no{position:absolute;bottom:20px;left:0;right:0;text-align:center;color:#8a7756;font-size:10px}
+.book-controls{display:flex;justify-content:center;align-items:center;gap:18px;margin:25px 0 0}
+.book-controls button{background:transparent;border:1px solid var(--line);color:#d5c29a;padding:10px 18px;font-size:12px;transition:.2s}
+.book-controls button:hover{background:#c4a56b;color:#171510}
+#pageIndicator{font-size:11px;color:#9b9079;letter-spacing:.1em;min-width:95px;text-align:center}
+.chronicle-index{max-width:1100px;margin:70px auto 0;padding:0 20px}
+.index-title{text-align:center;font-family:'Nanum Myeongjo',serif;font-size:25px;font-weight:400;margin-bottom:28px}
+.index-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.index-card{border:1px solid var(--line);padding:22px 18px;background:linear-gradient(145deg,#1b1c22,#111217);transition:.25s}
+.index-card:hover{transform:translateY(-4px);border-color:#c4a56b88}
+.index-card small{color:var(--gold);font-size:10px;letter-spacing:.2em}
+.index-card h4{font-family:'Nanum Myeongjo',serif;font-weight:400;font-size:17px;margin:12px 0}
+.index-card p{font-size:11px;color:#aaa293;line-height:1.8;margin:0}
+.closing{padding:95px 22px 110px;text-align:center;background:radial-gradient(ellipse at center,#28251f 0%,#101116 65%)}
+.closing h2{font-family:'Nanum Myeongjo',serif;font-size:clamp(28px,5vw,48px);font-weight:400;line-height:1.6;color:#e6d5ad}
+.closing p{font-size:13px;line-height:2;color:#b1a895;max-width:600px;margin:20px auto}
+.closing .last{color:var(--gold);letter-spacing:.15em;font-size:12px;margin-top:32px}
+footer{border-top:1px solid var(--line);padding:25px;text-align:center;color:#706958;font-size:10px;letter-spacing:.15em}
+@media(max-width:760px){.nav{display:none;position:absolute;top:60px;left:0;right:0;background:#15161c;padding:18px;flex-direction:column;gap:15px}.nav.open{display:flex}.menu{display:block}.book{grid-template-columns:1fr;min-height:0}.page.left{display:none}.page.right{min-height:560px;box-shadow:inset 0 0 18px #59482a20}.index-grid{grid-template-columns:repeat(2,1fr)}.reader{padding-left:15px;padding-right:15px}.hero:after{width:95vw;height:95vw}}
+@media(max-width:420px){.index-grid{grid-template-columns:1fr}.page.right{padding:30px 25px}.hero .subtitle{line-height:1.8}}
+</style>
+</head>
+<body>
+<header class="topbar">
+  <a class="brand" href="#top">MORGARD · CHRONICLES</a>
+  <nav class="nav" id="nav">
+    <a href="#chronicle">연대기</a><a href="#chapters">기록의 장</a><a href="#end">새로운 시대</a>
+  </nav>
+  <button class="menu" id="menuBtn" aria-label="메뉴 열기">☰</button>
+</header>
+
+<section class="hero" id="top">
+  <div class="hero-inner">
+    <div class="eyebrow">THE AGE OF THE NAMELESS HEROES</div>
+    <h1>모르가르드</h1>
+    <div class="subtitle">이름 없는 영웅들의 시대</div>
+    <p>세 왕관이 갈라지기 전, 하나의 대륙이 있었다.<br>그리고 그 대륙을 지켜낸 이들의 이름은 역사 속에 남지 않았다.</p>
+    <a class="cta" href="#chronicle">기록을 펼치다 <span>↘</span></a>
+  </div>
+  <div class="scrollhint">SCROLL TO DISCOVER　⌄</div>
+</section>
+
+<section class="intro" id="chronicle">
+  <div class="kicker">THE CHRONICLE OF MORGARD</div>
+  <h2>한 시대의 끝은<br>다른 시대의 첫 문장이 된다.</h2>
+  <div class="rule"></div>
+  <p>모르가르드는 수많은 세월과 전쟁, 그리고 이름 없는 이들의 선택을 거쳐 오늘에 이르렀다. 지금 대륙을 나누는 국경과 왕관은 처음부터 존재한 것이 아니었다. 이 책은 국가가 태어나기 전, 사람들이 처음으로 같은 땅을 고향이라 부르기 시작했던 오래된 시대의 기록이다.</p>
+</section>
+
+<section class="reader" id="chapters">
+  <div class="reader-head">
+    <div class="kicker">THE ARCHIVE · VOLUME I</div>
+    <h2>대륙의 오래된 기록</h2>
+    <p>목차를 선택하거나 페이지를 넘겨 모르가르드의 역사를 읽어보세요.</p>
+  </div>
+  <div class="book-wrap">
+    <div class="book">
+      <article class="page left">
+        <div class="page-content">
+          <div class="chapter">MORGARD · ARCHIVE</div>
+          <h3>연대기 목차</h3>
+          <p>이 기록은 대륙의 시작과 몰락, 그리고 다시 일어선 사람들의 이야기를 담고 있다.</p>
+          <div class="ornament">❧</div>
+          <ul class="toc" id="toc"></ul>
+          <div class="ornament">✦　✦　✦</div>
+          <p style="font-size:11px;color:#77613d">“역사는 왕의 이름으로 쓰이지만,<br>시대는 이름 없는 이들의 선택으로 바뀐다.”</p>
+        </div>
+        <div class="page-no">왼쪽 장 · 기록의 목차</div>
+      </article>
+      <article class="page right">
+        <div class="page-content" id="storyPage"></div>
+        <div class="page-no" id="pageNo">제1장</div>
+      </article>
+    </div>
+    <div class="book-controls">
+      <button id="prev">← 이전 장</button><span id="pageIndicator">01 / 07</span><button id="next">다음 장 →</button>
+    </div>
+  </div>
+
+  <div class="chronicle-index">
+    <h3 class="index-title">기록의 서가</h3>
+    <div class="index-grid">
+      <a class="index-card" href="#chapters" data-chapter="0"><small>Ⅰ · ORIGIN</small><h4>태초의 대륙</h4><p>작은 무리들이 하나의 땅을 고향이라 부르기까지.</p></a>
+      <a class="index-card" href="#chapters" data-chapter="1"><small>Ⅱ · PROSPERITY</small><h4>찬란한 시대</h4><p>도시와 기술, 전통이 꽃피운 대륙의 번영.</p></a>
+      <a class="index-card" href="#chapters" data-chapter="2"><small>Ⅲ · DARKNESS</small><h4>검은 하늘</h4><p>설명할 수 없는 재앙과 문명의 붕괴.</p></a>
+      <a class="index-card" href="#chapters" data-chapter="3"><small>Ⅳ · HEROES</small><h4>이름 없는 영웅들</h4><p>서로 다른 이들이 하나의 뜻으로 맞선 순간.</p></a>
+    </div>
+  </div>
+</section>
+
+<section class="closing" id="end">
+  <div class="kicker">THE NEXT CHAPTER IS YOURS</div>
+  <h2>과거의 영웅들은<br>대륙을 지켜냈다.</h2>
+  <p>그들이 남긴 것은 완벽한 평화가 아니었다. 다음 세대가 살아갈 기회였다. 오늘날 모르가르드의 미래를 결정할 사람들은 과거의 영웅들이 아니다. 아직 쓰이지 않은 역사의 다음 장을 열어갈 이들이다.</p>
+  <div class="last">이제, 당신의 시대가 시작된다.</div>
+  <a class="cta" href="#top">연대기 처음으로 <span>↑</span></a>
+</section>
+<footer>THE CHRONICLES OF MORGARD · A WORLD WAITING FOR ITS HEROES</footer>
+
+<script>
+const chapters = [
+{title:"태초의 대륙",roman:"Ⅰ",subtitle:"하나의 이름이 생겨나기 전",pages:[
+"아주 오래전, 모르가르드에는 지금과 같은 국가도 도시도 존재하지 않았다. 끝없이 펼쳐진 평원과 깊은 산맥, 인간의 발길이 닿지 않은 숲과 어둠에 잠긴 동굴만이 대륙을 채우고 있었다. 사람들은 작은 무리를 이루어 살아갔으며, 자연의 위협과 이름 모를 괴물들로부터 자신들의 터전을 지켜야 했다.",
+"누군가는 활을 들고 사냥터를 지켰고, 누군가는 검과 방패로 마을을 보호했다. 또 다른 이들은 마력을 연구하고, 신성한 힘으로 병든 이를 돌보았다. 보이지 않는 존재와 교감하는 이들도, 어둠 속 위험을 먼저 감지하는 이들도 있었다. 능력은 달랐지만 바라는 것은 같았다. 자신과 소중한 이들이 살아갈 수 있는 세상을 만드는 것.",
+"작은 정착지는 마을이 되었고, 마을은 길과 교역을 통해 연결되었다. 서로 다른 무리들은 함께 살아가는 법을 배웠다. 그리고 사람들은 자신들이 살아가는 이 거대한 땅에 하나의 이름을 붙였다. 모르가르드. 그 이름은 단순한 지명이 아니었다. 서로 다른 사람들이 같은 대륙 위에 살아간다는 사실을 처음으로 깨닫게 한 이름이었다."
+]},
+{title:"찬란한 시대",roman:"Ⅱ",subtitle:"문명과 전통이 꽃피다",pages:[
+"모르가르드라는 이름이 널리 알려진 뒤, 대륙에는 새로운 시대가 찾아왔다. 사람들은 더 이상 생존에만 매달리지 않았다. 산맥 너머에서 광맥을 발견하고, 깊은 숲에서 약초를 찾아냈으며, 오래된 유적에서 잊힌 지식과 기술을 발굴했다.",
+"교역로가 만들어지고 도시가 세워졌다. 각 지역은 자신들만의 문화와 기술을 발전시켰다. 궁수들은 먼 거리에서 적을 제압하는 기술을, 전사들은 전열을 지키는 전투법을 갈고닦았다. 마법사들은 마력의 흐름을 연구했고, 사제들은 사람들을 치유하고 지켜냈다. 소환사와 암살자들 또한 각자의 방식으로 대륙의 삶과 전투에 자리를 잡았다.",
+"기술은 전투 수단을 넘어 하나의 전통이 되었다. 스승은 제자에게 가르침을 전했고, 가문과 집단은 경험을 이어갔다. 모르가르드는 그 어느 때보다 번영했다. 그러나 찬란한 시대가 영원히 이어질 수는 없었다. 대륙의 깊은 곳에서, 사람들이 알지 못했던 오래된 힘이 깨어나고 있었다."
+]},
+{title:"검은 하늘",roman:"Ⅲ",subtitle:"빛이 흐려지고 재앙이 시작되다",pages:[
+"어느 날, 모르가르드의 하늘에 기이한 변화가 일어났다. 낮의 빛은 흐려졌고, 밤하늘에는 본래 존재하지 않던 빛들이 나타났다. 대륙 곳곳에서 땅이 흔들렸으며, 오래된 유적에서는 정체를 알 수 없는 마력이 흘러나왔다.",
+"얼마 지나지 않아 괴물들이 나타났다. 어떤 존재는 어둠 속에서 모습을 드러냈고, 어떤 존재는 땅속에서 솟아났다. 그 힘은 인간의 지식으로 설명할 수 없었다. 마을과 도시는 연이어 무너졌고, 교역로는 끊겼다. 대륙을 연결하던 길들은 위험한 폐허로 변해갔다.",
+"사람들은 이 시기를 검은 하늘의 시대라 불렀다. 한때 찬란했던 문명은 무너져 내렸고, 수많은 지식과 기술이 사라졌다. 살아남은 이들은 터전을 버리고 피난길에 올랐다. 누구도 대륙을 구할 방법을 알지 못했다. 하지만 절망 속에서도 사람들은 포기하지 않았다."
+]},
+{title:"이름 없는 영웅들",roman:"Ⅳ",subtitle:"서로 다른 이들이 하나의 뜻으로",pages:[
+"재앙이 깊어질수록 살아남은 이들은 혼자서는 버틸 수 없다는 사실을 깨달았다. 서로 다른 지역에서 살아가던 사람들이 힘을 합쳤다. 그들 가운데에는 이름난 장군도, 왕도, 위대한 예언자도 없었다. 고향을 지키고 싶었던 사람들, 가족과 동료를 잃고도 다시 일어선 사람들, 같은 비극이 반복되지 않기를 바랐던 사람들이 있었다.",
+"궁수들은 무너진 성벽 위에서 피난민이 지나갈 길을 열었다. 전사들은 전선에 서서 동료들이 물러날 시간을 벌었다. 마법사들은 괴물의 진격을 막았고, 사제들은 부상자와 무너진 마음을 돌보았다. 소환사들은 함께 싸우는 존재들과 전선을 버텨냈으며, 암살자들은 위협의 근원을 추적해 길을 열었다.",
+"그들은 서로 다른 방식으로 싸웠다. 때로는 의견이 충돌했고, 서로의 능력을 이해하지 못하기도 했다. 그러나 누군가가 앞에 서야 한다면 그 자리는 자신들이 맡겠다는 마음만은 같았다. 그들의 이름과 출신은 기록되지 않았다. 살아남은 사람들은 그들을 이름 없는 영웅들이라 불렀다."
+]},
+{title:"마지막 전투",roman:"Ⅴ",subtitle:"대륙의 운명을 건 결전",pages:[
+"영웅들은 괴물들이 나타나는 현상이 단순한 재앙이 아니라는 사실을 알아냈다. 모든 위협은 오래된 유적과 깊은 지하에 자리한 하나의 근원으로 이어져 있었다. 그곳에서는 검은 하늘을 만들어낸 정체불명의 힘이 끊임없이 흘러나오고 있었다. 그 힘이 계속되는 한 괴물들은 사라지지 않을 것이었다.",
+"영웅들은 마지막 결전을 준비했다. 그들이 향한 곳은 오랜 세월 누구도 접근하지 못했던 폐허였다. 길은 무너져 있었고, 그곳을 지키는 괴물들은 이전보다 강력했다. 궁수는 앞길을 살폈고, 전사는 동료들을 지켰다. 마법사는 근원의 힘에 맞섰으며, 사제는 쓰러진 이들을 돌보았다. 소환사와 암살자는 각자의 방식으로 마지막 길을 열었다.",
+"마침내 영웅들은 오래된 힘을 봉인하는 데 성공했다. 검은 하늘은 서서히 걷히고 괴물들의 위협도 약해졌다. 그러나 승리에는 대가가 따랐다. 수많은 영웅들이 돌아오지 못했고, 대륙에는 폐허와 상처가 남았다. 그럼에도 사람들은 잊지 않았다. 모르가르드는 누군가의 희생으로 다시 살아갈 기회를 얻었다는 것을."
+]},
+{title:"새로운 시대의 시작",roman:"Ⅵ",subtitle:"재건과 새로운 신념",pages:[
+"검은 하늘이 걷힌 뒤, 모르가르드에는 긴 재건의 시간이 찾아왔다. 사람들은 무너진 마을을 다시 세우고 끊어진 길을 복구했다. 폐허가 된 도시에는 새로운 건물이 들어섰고, 오래된 유적은 과거의 지식을 찾기 위한 탐험의 대상이 되었다.",
+"이름 없는 영웅들이 사용했던 기술과 전투 방식은 후대에 전해졌다. 그들의 가르침은 각자의 전통으로 이어졌고, 많은 이들이 그 발자취를 따라 자신의 길을 찾았다. 그러나 대륙이 회복되면서 사람들의 생각은 다시 달라지기 시작했다.",
+"어떤 이들은 강력한 통치 아래 질서를 세워야 한다고 믿었다. 어떤 이들은 자유로운 연합을 주장했고, 또 다른 이들은 힘을 길러야만 재앙을 막을 수 있다고 생각했다. 서로 다른 신념은 새로운 세력들을 만들었다. 모르가르드는 다시 번영을 향해 나아갔지만, 모두가 같은 미래를 꿈꾸는 것은 아니었다."
+]},
+{title:"당신의 시대",roman:"Ⅶ",subtitle:"아직 쓰이지 않은 역사",pages:[
+"오래전 이름 없는 영웅들은 대륙을 지켜냈다. 그들이 남긴 것은 완벽한 평화도, 영원히 이어질 질서도 아니었다. 다음 세대가 살아갈 수 있는 기회였다.",
+"오늘날 모르가르드의 사람들은 각자의 신념과 목표를 품고 살아간다. 누군가는 강대한 국가를 세우고, 누군가는 동료들과 새로운 길을 개척한다. 또 누군가는 과거의 유적을 탐험하며 잊힌 역사를 찾아 나선다. 대륙 곳곳에는 아직 밝혀지지 않은 장소와 오래된 문명의 흔적이 남아 있다.",
+"이제 대륙의 미래를 결정할 사람들은 과거의 영웅들이 아니다. 그들의 뒤를 이어 새로운 역사를 만들어 갈 이들. 바로 지금, 모르가르드에 발을 내딛는 당신이다. 과거의 영웅들은 대륙을 지켜냈다. 미래를 만들어 갈 영웅들은 아직 정해지지 않았다. 모르가르드의 역사는 끝나지 않았다."
+]}
+];
+let current=0;
+const storyPage=document.getElementById('storyPage'), toc=document.getElementById('toc');
+chapters.forEach((c,i)=>{const li=document.createElement('li');li.innerHTML=`<span>${c.roman}</span><button type="button">${c.title}</button>`;li.querySelector('button').addEventListener('click',()=>render(i));toc.appendChild(li)});
+function render(index){
+ current=(index+chapters.length)%chapters.length;const c=chapters[current];
+ storyPage.innerHTML=`<div class="chapter">CHAPTER ${c.roman} · MORGARD CHRONICLE</div><h3>${c.title}</h3><p style="color:#806741;font-size:11px;letter-spacing:.08em">${c.subtitle}</p><div class="ornament">❧</div>${c.pages.map(p=>`<p>${p}</p>`).join('')}<div class="ornament">✦</div>`;
+ document.getElementById('pageNo').textContent=`제${c.roman}장 · ${c.title}`;
+ document.getElementById('pageIndicator').textContent=`${String(current+1).padStart(2,'0')} / ${String(chapters.length).padStart(2,'0')}`;
+ document.getElementById('prev').disabled=current===0;document.getElementById('next').disabled=current===chapters.length-1;
+ document.getElementById('prev').style.opacity=current===0?".35":"1";document.getElementById('next').style.opacity=current===chapters.length-1?".35":"1";
+}
+document.getElementById('prev').addEventListener('click',()=>render(current-1));
+document.getElementById('next').addEventListener('click',()=>render(current+1));
+document.querySelectorAll('[data-chapter]').forEach(el=>el.addEventListener('click',()=>render(Number(el.dataset.chapter))));
+document.getElementById('menuBtn').addEventListener('click',()=>document.getElementById('nav').classList.toggle('open'));
+document.querySelectorAll('.nav a').forEach(a=>a.addEventListener('click',()=>document.getElementById('nav').classList.remove('open')));
+render(0);
+</script>
+</body>
+</html>
